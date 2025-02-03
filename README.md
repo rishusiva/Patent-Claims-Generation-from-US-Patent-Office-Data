@@ -14,7 +14,6 @@
 ---
 
 ## Introduction
-![Introduction Slide](images/slide_1_image.png)
 
 Patent claims play a crucial role in defining the scope and boundaries of intellectual property. Traditionally, drafting patent claims is a manual, time-consuming, and error-prone task that requires significant effort from legal experts. Our project aims to automate the generation of patent claims using state-of-the-art language models, which can significantly accelerate the patent application process while reducing costs and improving efficiency.
 
@@ -25,7 +24,6 @@ The manual drafting process for patent claims often leads to delays, errors, and
 - Enable faster patent application processing.
 
 ## Dataset
-![Dataset Overview](images/slide_2_image.png)
 
 We utilized patent data from the **United States Patent and Trademark Office (USPTO)**, specifically focusing on patents issued from 2005. The dataset was preprocessed to include the following key components:
 - Summary of the patent
@@ -42,14 +40,13 @@ We utilized patent data from the **United States Patent and Trademark Office (US
 
 ## Solution Overview
 ### Baseline Models:
-![Baseline Models](images/slide_3_image.png)
 
 - **T5 Transformer:** Token limit of 512 tokens.
 - **ChatGPT-3.5:** Zero-shot and fine-tuned evaluation for claim generation.
 - **LongT5:** Optimized for long-sequence input (up to 16,000 tokens for extended context retention).
 
 ### LongT5 Configuration:
-![LongT5 Configuration](images/slide_4_image.png)
+![Introduction Slide](images/slide_1_image.png)
 
 - **Attention Mechanism:** TGlobal attention  
 - **Training Context Lengths:**  
@@ -61,7 +58,8 @@ We utilized patent data from the **United States Patent and Trademark Office (US
 ---
 
 ## Challenges
-![Challenges Slide](images/slide_6_image.png)
+![Evaluation Metrics](images/slide_7_image.png)
+
 
 1. **Claim Structure:** Maintaining logical structure while generating valid claims.  
 2. **Input Length Limitation:**  
@@ -73,7 +71,7 @@ We utilized patent data from the **United States Patent and Trademark Office (US
 ---
 
 ## Evaluation Metrics
-![Evaluation Metrics](images/slide_7_image.png)
+![Sentence Alignment](images/slide_8_image.png)
 
 We used the following metrics to assess the generated claims:
 1. **BLEU Score:** Measures precision by checking how many generated n-grams appear in the reference claims, with a brevity penalty for short outputs.
@@ -81,7 +79,7 @@ We used the following metrics to assess the generated claims:
 3. **BERTScore:** Evaluates semantic similarity by comparing sentence embeddings and correlating with human rankings for validation.  
 
 ### Sentence Alignment Problem:
-![Sentence Alignment](images/slide_8_image.png)
+![Preliminary Results](images/slide_9_image.png)
 
 - To address sentence order issues in evaluation, we developed a custom **Dynamic Programming (DP) algorithm** inspired by Needleman and Wunsch (used in DNA sequence alignment).  
 - Optimized alignment for BLEU scoring using O(MN) complexity.
@@ -89,7 +87,7 @@ We used the following metrics to assess the generated claims:
 ---
 
 ## Preliminary Results
-![Preliminary Results](images/slide_9_image.png)
+![Future Work](images/slide_10_image.png)
 
 - **Key Finding:** Longer input contexts improve model performance.  
 - **Testing:** Evaluated across 3 epochs with a test size of 1,000 samples.  
@@ -104,7 +102,6 @@ We used the following metrics to assess the generated claims:
 ---
 
 ## Future Work
-![Future Work](images/slide_10_image.png)
 
 We aim to further improve the model through:
 1. Training with additional data to improve generalization.  
